@@ -1,5 +1,6 @@
 import { fetchGalleries, fetchGalleryById, fetchGalleryByName } from "@/lib/data.service"
 import { NextResponse } from "next/server"
+import { corsOptions } from "@/lib/corsOptions";
 
 export async function GET(request) {
 
@@ -12,12 +13,12 @@ export async function GET(request) {
 
     if(name && id === null) {
         let result = await fetchGalleryByName(name)
-        return NextResponse.json(result)
+        return NextResponse.json(result, corsOptions('GET'))
 
     } else {
 
         let result = await fetchGalleryById(id)
-        return NextResponse.json(result)
+        return NextResponse.json(result, corsOptions('GET'))
     }
 
 }

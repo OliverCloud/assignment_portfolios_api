@@ -5,7 +5,7 @@ import GalleriesCollection from "@/components/galleriesCollection/galleriesColle
 const Page = () => {
     return (
         <main>
-            <GalleriesCollection />
+            <GalleriesCollection gallery={'obscura'}/>
 
         </main>
     )
